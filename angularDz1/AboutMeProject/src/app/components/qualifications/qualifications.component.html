@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <p class="titleHeader">{{qualification.title | uppercase}}</p>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <ul style="list-style: none;">
+        <li><span>Specialty:</span> {{qualification.specialty}};</li>
+        <li><span>Experience:</span> {{qualification.experience}};</li>
+        <li><span>Position:</span> {{qualification.position}};</li>
+        <li><span>Salary:</span> {{qualification.salary | currency:'UAH':'symbol-narrow'}} {{qualification.salary |
+          percent}};</li>
+        <li><span>Skills:</span> {{qualification.skills}};</li>
+      </ul>
+    </blockquote>
+  </div>
+</div>

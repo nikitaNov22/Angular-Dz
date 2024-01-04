@@ -1,0 +1,42 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <p class="titleHeader">{{aboutMe.title | uppercase}}</p>
+  </div>
+  <div class="row no-gutters">
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <ul style="list-style: none;">
+            <li><span>Name:</span> {{aboutMe.name }};</li>
+            <li><span>Surname:</span> {{aboutMe.surname}};</li>
+            <li><span>Date of birth:</span> {{aboutMe.dateOfBirth}};</li>
+            <li><span>Age:</span> {{aboutMe.age}};</li>
+            <li><span>Gender:</span> {{aboutMe.gender}};</li>
+            <li [ngSwitch]="attitudes">
+              <span>Attitudes: </span>
+              <span *ngSwitchCase="'marriage'" style="font-weight: 400;">Marriage</span>
+              <span *ngSwitchDefault style="font-weight: 400;">None</span>
+            </li>
+            <li><span>Growth:</span> {{aboutMe.growth}};</li>
+            <li><span>Hobbies:</span> {{aboutMe.hobbies}};</li>
+            <li><span>Education:</span> {{aboutMe.education}};</li>
+          </ul>
+
+          <span style="margin-left: 2.5rem;">Friends:</span>
+          <ol style="margin-left: 2.5rem;">
+            <li *ngFor="let friend of friends">{{friend.name}}</li>
+          </ol>
+
+          <div *ngIf="friends.length > 0">
+            <span style="margin-left: 2.5rem;">Number of friends:</span> {{friends.length}} {{friends.length === 1 ? 'friend' : 'friends'}}
+          </div>
+        </blockquote>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="https://cdn.pixabay.com/photo/2015/11/03/09/10/craftsmen-1020156_1280.jpg" class="card-img-top" alt="...">
+    </div>
+  </div>
+</div>
+
